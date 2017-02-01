@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SensorCatalogue xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="256332.xsd">
+  <Sensor id="AAAa-11a">
+    <Type>General sensor</Type>
+    <Model>Model of general sensor</Model>
+    <Vendor>Large vendor</Vendor>
+    <Description>Detailed description of the sensor</Description>
+    <Outputs>
+      <integerOutput id="1">1</integerOutput>
+      <floatOutput id="2">1</floatOutput>
+      <doubleOutput id="3">1</doubleOutput>
+      <textOutput id="4">1</textOutput>
+      <integerOutput id="5">2</integerOutput>
+    </Outputs>
+  </Sensor>
+</SensorCatalogue>

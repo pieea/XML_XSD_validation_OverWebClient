@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!--********************************************
+    ********definition of simple types**************
+    **********************************************-->
+
+
+    <!-- Types relating to the "ordered_by" element inside the complex element "order_details" -->
+    <xs:complexType name="ordered_by_type">
+        <xs:sequence>
+            <xs:element ref="name" />
+            <xs:element name="email" type="xs:string"  maxOccurs="unbounded"/>
+            <xs:element name="phone" type="phone_type"  maxOccurs="unbounded"/>
+            <xs:element name="address" type="address_type" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="phone_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="address_type">
+        <xs:sequence>
+            <xs:element name="line1" type="xs:string"/>
+            <xs:element name="line2" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="country" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Types relating to the "ordered_items" element inside the complex element "order_details" -->
+    <xs:complexType name="ordered_items_type">
+        <xs:sequence>
+            <xs:element name="item" type="item_type"  maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="item_type">
+        <xs:sequence>
+            <xs:element ref="name" minOccurs="0"/>
+            <xs:element name="quantity" type="xs:positiveInteger" />
+            <xs:element name="frame" type="design_type" />
+            <xs:element name="screen" type="design_type" />
+            <xs:element name="keypad" type="design_type" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="design_type">
+        <xs:sequence>
+            <xs:element name="design" type="choose_abc_type"/>
+            <xs:element name="color" type="color_type"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="color_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="red|blue|green|Red|Blue|Green|RED|BLUE|GREEN"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="choose_abc_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[ABCabc]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <!--********************************************
+    ********definition of simple elements **********
+    *********************************************-->
+
+    <xs:element name="name" type="xs:string"/>
+
+
+    <!--********************************************
+    ********definition of complex elements *********
+    *********************************************-->
+
+    <xs:element name="order_details">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="ordered_by" type="ordered_by_type"/>
+                <xs:element name="ordered_items" type="ordered_items_type"/>
+                <xs:element name="order_date" type="xs:date"/>
+                <xs:element name="order_id" type="xs:string"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

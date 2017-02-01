@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<order_details  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="order_details.xsd">
+    <ordered_by>
+        <name>Abhijit</name>
+        <email>abhi@abhi.com</email>
+        <phone>0231145</phone>
+        <address>
+            <line1>street address 1</line1>
+            <line2>street 2</line2>
+            <city>Tampere</city>
+            <country>Finland</country>
+        </address>
+    </ordered_by>
+    <order_id>s39232</order_id>
+    <order_date>2017-01-31</order_date>
+    <ordered_items>
+        <item>
+            <name>Item1</name>
+            <quantity>8</quantity>
+            <frame>
+                <design>A</design>
+                <color>Red</color>
+            </frame>
+            <screen>
+                <design>A</design>
+                <color>Red</color>
+            </screen>
+            <keypad>
+                <design>A</design>
+                <color>blue</color>
+            </keypad>
+        </item>
+        <item>
+            <name>Item2</name>
+            <quantity>6</quantity>
+            <frame>
+                <design>c</design>
+                <color>blue</color>
+            </frame>
+            <screen>
+                <design>A</design>
+                <color>Red</color>
+            </screen>
+            <keypad>
+                <design>B</design>
+                <color>GREEN</color>
+            </keypad>
+        </item>
+    </ordered_items>
+
+</order_details>
+
