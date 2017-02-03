@@ -35,6 +35,7 @@ var SystemMessage=null;
 
 app.get('/',function(req,res){
     res.sendFile(__dirname + "/index.html");
+    name="";
 });
 
 app.post('/checkxml',function(req,res){
