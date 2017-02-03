@@ -2,7 +2,7 @@
 
 <order_details  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="order_details.xsd">
     <ordered_by>
-        <name>Abhijit</name>
+        <name>some weird name</name>
         <email>abhi@abhi.com</email>
         <phone>0231145</phone>
         <address>

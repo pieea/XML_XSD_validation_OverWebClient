@@ -9,23 +9,26 @@
     <!-- Types relating to the "ordered_by" element inside the complex element "order_details" -->
     <xs:complexType name="ordered_by_type">
         <xs:sequence>
-            <xs:element ref="name" />
-            <xs:element name="email" type="xs:string"  maxOccurs="unbounded"/>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="email" type="email_type"  maxOccurs="unbounded"/>
             <xs:element name="phone" type="phone_type"  maxOccurs="unbounded"/>
             <xs:element name="address" type="address_type" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-
+    <xs:simpleType name="email_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".*@.*\..*"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:simpleType name="phone_type">
         <xs:restriction base="xs:string">
             <xs:pattern value="[0-9]*"/>
         </xs:restriction>
     </xs:simpleType>
-
     <xs:complexType name="address_type">
         <xs:sequence>
             <xs:element name="line1" type="xs:string"/>
-            <xs:element name="line2" type="xs:string"/>
+            <xs:element name="line2" type="xs:string" minOccurs="0"/>
             <xs:element name="city" type="xs:string"/>
             <xs:element name="country" type="xs:string"/>
         </xs:sequence>
@@ -39,7 +42,7 @@
 
     <xs:complexType name="item_type">
         <xs:sequence>
-            <xs:element ref="name" minOccurs="0"/>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
             <xs:element name="quantity" type="xs:positiveInteger" />
             <xs:element name="frame" type="design_type" />
             <xs:element name="screen" type="design_type" />
@@ -62,14 +65,6 @@
             <xs:pattern value="[ABCabc]"/>
         </xs:restriction>
     </xs:simpleType>
-
-
-    <!--********************************************
-    ********definition of simple elements **********
-    *********************************************-->
-
-    <xs:element name="name" type="xs:string"/>
-
 
     <!--********************************************
     ********definition of complex elements *********

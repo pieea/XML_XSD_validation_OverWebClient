@@ -143,7 +143,7 @@ function readXML(filename){
                     if(result.valid) {
                         console.log("Validation Successful. \n\nThe content of the xml file is as follows:\n ");
                         console.log(xmlStr);
-                        Message="Validation of "+name+".xml"+" Successful. \n\nThe content of the xml file is as follows:\n ";
+                        Message="The file "+name+".xml"+" is valid \n\nThe content of the xml file is as follows:\n ";
                         SystemMessage=xmlStr;
                     }
                 });

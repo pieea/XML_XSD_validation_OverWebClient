@@ -31,22 +31,6 @@
                 <color>blue</color>
             </keypad>
         </item>
-        <item>
-            <name>Item2</name>
-            <quantity>6</quantity>
-            <frame>
-                <design>c</design>
-                <color>blue</color>
-            </frame>
-            <screen>
-                <design>A</design>
-                <color>Red</color>
-            </screen>
-            <keypad>
-                <design>B</design>
-                <color>GREEN</color>
-            </keypad>
-        </item>
     </ordered_items>
 
 </order_details>
