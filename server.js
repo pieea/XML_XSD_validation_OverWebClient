@@ -17,6 +17,7 @@ var storage =   multer.diskStorage({
         var h = date.getHours();
         var m=date.getMinutes();
         var s=date.getSeconds();
+        name="";
         for(var i=0;i<file.originalname.length;i++){
             if(file.originalname[i]=="."){break;}else{
                 name=name+file.originalname[i];
@@ -35,6 +36,7 @@ var SystemMessage=null;
 
 app.get('/',function(req,res){
     res.sendFile(__dirname + "/index.html");
+
 });
 
 app.post('/checkxml',function(req,res){
