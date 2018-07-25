@@ -4,7 +4,8 @@
   "description": "a simple application to validate xml file using xsd schema file. Using a web client the xml file is submitted to the server that validates the file according t the given schema and states whether the file is valid or not",
   "main": "FirstProject.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
