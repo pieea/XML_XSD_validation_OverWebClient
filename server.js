@@ -5,6 +5,8 @@ var express =   require("express");
 var multer  =   require('multer');
 var app         =   express();
 
+const PORT = process.env.PORT
+
 var storage =   multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, './uploads');
@@ -172,7 +174,7 @@ function checkFileExist(filename){
     });
 }
 
-app.listen(8081,function(){
+app.listen(PORT,function(){
     console.log("Server Listening at http://127.0.0.1:8081");
     console.log("***********************************\n");
 });
